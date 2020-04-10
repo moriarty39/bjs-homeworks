@@ -28,5 +28,5 @@ function getGreeting(name) {
 		name = 'Аноним'
 	}
 	
-	greeting = `Привет, мир! Меня зовут ${name}`;
+	return greeting = `Привет, мир! Меня зовут ${name}`;
 }
