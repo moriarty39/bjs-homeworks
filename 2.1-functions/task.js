@@ -41,6 +41,9 @@ showSolutionsMessage(2,4,2);
 const data = {
   algebra: [1,2,3],
   russian: [5,6],
+  physics : [5,5],
+  music: [2,2,6],
+  reading: [5,3,4],
   english: []
 }
 function getAverageScore(data) {
