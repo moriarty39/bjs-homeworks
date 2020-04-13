@@ -77,3 +77,33 @@ const data = {
   const result = getAverageScore(data);
   console.log(result);
   
+
+  function getDecodedValue(secret) {    
+    let name;
+    
+    if (secret == 1) {
+        name = 'Эмильо';
+    } else if (secret == 0) {
+        name = "Родриго";
+    }
+    return name;
+   
+}
+
+let agentCode = {    
+    aaa : 1,
+    bbb : 1
+}
+
+function getPersonData(agentData) {
+   console.log (agentData);
+   let nombreCode = {
+       firstName : "",
+       lastName : ""
+   }
+   nombreCode.firstName = getDecodedValue(agentData.aaa);
+   nombreCode.lastName = getDecodedValue(agentData.bbb);
+   return console.log(nombreCode); 
+}
+
+getPersonData(agentCode);
