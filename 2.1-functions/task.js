@@ -34,7 +34,7 @@ function showSolutionsMessage(a, b, c) {
 }
 showSolutionsMessage(7,20,-3)
 
-// Задача 2
+
 
 const data = {
   algebra: [1,2,3],
@@ -79,7 +79,7 @@ function getAverageMark(marks){
 const result = getAverageScore(data);
 console.log(result);
 
-// Задача 3
+
 function getPersonData(secretData) {
   let firstName = getDecodedValue(secretData.aaa);
   let lastName = getDecodedValue(secretData.bbb);
