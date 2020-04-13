@@ -36,11 +36,16 @@ showSolutionsMessage(7,20,-3)
 
 
 const data = {
-    algebra: [3,4,5],
-    russian: [3,4],
-    geometry: [2,4,5],
-    chemistry: [3],
-    german: []
+    algebra : [2,4,5,2,3,4],
+    geometry : [2,4,5],
+    russian : [3,3,4,5],
+    physics : [5,5],
+    music : [2,2,6],
+    english : [4,4,3],
+    poetry : [5,3,4],
+    chemistry : [2],
+    french : []
+}
   }
   function getAverageScore(data) {
     const result = {};
@@ -53,9 +58,7 @@ const data = {
         count++;
         result.average = sumResult / count;
     }
-    if(!result.length){
-        return result.average = 0;
-         }
+    
      return result;
   }
   
@@ -82,6 +85,11 @@ const data = {
   
 
 
+
+
+
+
+  
 
   function getPersonData(secretData) {
     let firstName = getDecodedValue(secretData.aaa);
