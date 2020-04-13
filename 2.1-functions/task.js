@@ -39,7 +39,8 @@ const data = {
     algebra: [3,4,5],
     russian: [3,4],
     geometry: [2,4,5],
-    chemistry: [3]
+    chemistry: [3],
+    german: []
   }
   function getAverageScore(data) {
     const result = {};
