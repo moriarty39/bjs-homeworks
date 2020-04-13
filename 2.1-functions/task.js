@@ -1,15 +1,15 @@
 "use strict"
 
-
+// ЗАДАНИЕ 1 - Корни квадратного уравнения
 let D;
 
-function getSolutions( a, b, c ) { 
+function getSolutions( a, b, c ) { //Вычисление корней квадратного уравнения
     let roots = [];
     
-    D = Math.pow(b,2) - 4 * a * c; 
+    D = Math.pow(b,2) - 4 * a * c; //Дискриминант
 
     if (D < 0) {
-        console.log(`D : ${D}, roots: ${roots} `);  
+        console.log(`D : ${D}, roots: ${roots} `);  //нет корней
         return {
             discr : D,
             root : roots
@@ -17,7 +17,7 @@ function getSolutions( a, b, c ) {
 
     } else if (D == 0) {
         let x1;
-        x1 = -b / (2 * a); 
+        x1 = -b / (2 * a); //один корень
         roots[0] = x1;
         console.log( `D : ${D}, roots: ${roots} `);
         return {
@@ -26,12 +26,12 @@ function getSolutions( a, b, c ) {
         }
     } else if (D > 0) {
         let x1,x2;
-        x1 = (-b + Math.sqrt(D)) / (2 * a);  
+        x1 = (-b + Math.sqrt(D)) / (2 * a);  //два корня
         x2 = (-b - Math.sqrt(D)) / (2 * a); 
         roots[0] = x1;
         roots[1] = x2;
         console.log( `D : ${D}, roots: ${roots} `);
-        return {   
+        return {   //выходные параметры как объект
             discr : D,
             root : roots
         }
@@ -51,10 +51,11 @@ function showSolutionsMessage( a, b, c ) {
         console.log(`Уравнение имеет два корня. X₁ = ${result.root[0]}, X₂ = ${result.root[1]}`)
     }
 }
-
+// showSolutionsMessage(1,2,3);
+// showSolutionsMessage(7,20,-3);
    showSolutionsMessage(2,4,2);
 
-
+//ЗАДАНИЕ 2 - Журнал успеваемости
 
 let assessment = {
     algebra : [2,4,5,2,3,4],
@@ -68,10 +69,10 @@ let assessment = {
     french : [4,4]
 }
 
-let sum;  
-let sumMidAssesstment = 0;  
+let sum;   //переменная для суммы оценок по одному предмету
+let sumMidAssesstment = 0;  //переменная по сложения всех средних оценок
 
-function getAverageMark(marks) {   
+function getAverageMark(marks) {   //функция вычисления средней оценки по одному предмету
     for (let i = 0; i < marks.length; i++) {
         sum+=marks[i];
     }
@@ -81,28 +82,29 @@ function getAverageMark(marks) {
 
 function getAverageScore(data) {
 
-    let midAssessment = {    
-        _proto_ : data       
+    let midAssessment = {    //объект со средними оценками
+        _proto_ : data       //прототип data
     };  
 
-    let general = 0;         
-    
-    for (let key in data) {    /
+    let general = 0;         //количество предметов
+    // midAssessment._proto_ = data;
+    for (let key in data) {    //перебираем объект с оценками
         sum = 0;
         general = general + 1;    
         let value = data [key];
-        midAssessment[key] = getAverageMark(value); 
-        sumMidAssesstment += midAssessment[key];    
+        midAssessment[key] = getAverageMark(value); //вызываем функцию  и присваиваем ее результат новому объекту
+        sumMidAssesstment += midAssessment[key];    //складываем средние оценки
     }
-    midAssessment.average = sumMidAssesstment / general;  
+    midAssessment.average = sumMidAssesstment / general;  //вычисляем average
 return (console.log(midAssessment));
 }
 
 getAverageScore(assessment);
 
+//ЗАДАНИЕ 3 Расшифровка данных
 
-
-function getDecodedValue(secret) {    
+function getDecodedValue(secret) {    //Разбираем шифр 0 и 1
+    let name;
     
     if (secret == 1) {
         name = 'Эмильо';
@@ -113,7 +115,7 @@ function getDecodedValue(secret) {
    
 }
 
-let initCode = {    
+let initCode = {    //Исходные данные
     aaa : 1,
     bbb : 1
 }
