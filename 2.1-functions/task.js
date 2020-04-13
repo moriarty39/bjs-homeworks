@@ -52,9 +52,7 @@ function getAverageScore(data) {
       count++;
       result.average = sumResult / count;
   }
-   if(!result.length){
-     return result.average = 0;
-   }
+   
    return result;
 }
 
