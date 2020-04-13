@@ -53,7 +53,9 @@ const data = {
         count++;
         result.average = sumResult / count;
     }
-  
+    if(!result.length){
+        return result.average = 0;
+         }
      return result;
   }
   
@@ -78,6 +80,8 @@ const data = {
   const result = getAverageScore(data);
   console.log(result);
   
+
+
 
   function getPersonData(secretData) {
     let firstName = getDecodedValue(secretData.aaa);
