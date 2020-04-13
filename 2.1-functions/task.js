@@ -78,32 +78,17 @@ const data = {
   console.log(result);
   
 
-  function getDecodedValue(secret) {    
-    let name;
-    
+  function getPersonData(secretData) {
+    let firstName = getDecodedValue(secretData.aaa);
+    let lastName = getDecodedValue(secretData.bbb);
+    return {firstName, lastName};
+  }
+  
+  function getDecodedValue(secret) {
     if (secret == 1) {
-        name = 'Эмильо';
-    } else if (secret == 0) {
-        name = "Родриго";
+      return "Эмильо";
+    } else {
+      return "Родриго";
     }
-    return name;
-   
-}
-
-let agentCode = {    
-    aaa : 1,
-    bbb : 1
-}
-
-function getPersonData(agentData) {
-   console.log (agentData);
-   let nombreCode = {
-       firstName : "",
-       lastName : ""
-   }
-   nombreCode.firstName = getDecodedValue(agentData.aaa);
-   nombreCode.lastName = getDecodedValue(agentData.bbb);
-   return console.log(nombreCode); 
-}
-
-getPersonData(agentCode);
+  } 
+  console.log (getPersonData({aaa:0, bbb:0}))
