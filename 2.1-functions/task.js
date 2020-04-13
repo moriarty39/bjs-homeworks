@@ -33,6 +33,8 @@ function showSolutionsMessage(a, b, c) {
      
 }
 showSolutionsMessage(7,20,-3)
+showSolutionsMessage(1,2,3);
+showSolutionsMessage(2,4,2);
 
 
 
