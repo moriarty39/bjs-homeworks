@@ -33,3 +33,47 @@ function showSolutionsMessage(a, b, c) {
      
 }
 showSolutionsMessage(7,20,-3)
+
+
+const data = {
+    algebra: [3,4,5],
+    russian: [3,4],
+    geometry: [2,4,5],
+    chemistry: [3]
+  }
+  function getAverageScore(data) {
+    const result = {};
+    let sumResult = 0;
+    let count = 0;
+    const average = {};
+    for (let courses in data) {
+        result[courses] = getAverageMark(data[courses]);
+        sumResult += result[courses];
+        count++;
+        result.average = sumResult / count;
+    }
+  
+     return result;
+  }
+  
+  
+  function getAverageMark(grades){
+    let averageMark = 0;
+    const sum = array => {
+       let sum = 0
+       array.forEach(function (value) {
+           sum += value;
+       });
+       return sum
+   }
+   if (grades.length == 0) {
+       return 0;
+   } else {
+       averageMark = sum(grades) / grades.length
+   }
+    return averageMark;
+  }
+  
+  const result = getAverageScore(data);
+  console.log(result);
+  
