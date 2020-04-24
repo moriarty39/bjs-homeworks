@@ -211,7 +211,6 @@ class StudentLog {
 const log = new StudentLog('Олег Никифоров');
 console.log(log.getName()) 
 console.log(log.addGrade(2, 'algebra'));
-console.log(log.addGrade('отлично!', 'math'));
 console.log(log.addGrade(4, 'algebra'));
 console.log(log.addGrade(5, 'geometry'));
 console.log(log.addGrade(4, 'geometry'));
@@ -219,6 +218,6 @@ console.log(log.addGrade(4, 'geometry'));
 log.addGrade(2, 'algebra');
 log.addGrade(4, 'algebra');
 log.addGrade(5, 'geometry');
-console.log(log.addGrade(4, 'geometry'));
+log.addGrade(4, 'geometry'));
 
 console.log(log.getTotalAverage()); 
