@@ -4,17 +4,19 @@ class Weapon {
         this.attack = attack;
         this.durability = durability;
         this.range = range;
-        this.initialValue = this.durability;    
+        this.initialValue = this.durability;    // сохраняем исходное значение прочности    }
     }
 
+    // initialValue = this.durability;
 
-    takeDamage(damage) {  
+
+    takeDamage(damage) {  //повреждение от соперника
         if ((this.durability - damage) > 0) {
             this.durability = this.durability - damage;
         } else this.durability = 0;
-        return this.durability;     
+        return this.durability;     //новое значение прочности
     }
-    getDamage() {  
+    getDamage() {  //урон от удара данным оружием
         if (this.durability == 0) {
             return 0;
         }
@@ -54,24 +56,24 @@ bow.takeDamage(200);
 console.log(bow.durability);
 console.log(bow.getDamage());
 
-console.log(arm.durability); 
-console.log(arm.getDamage()); 
+console.log(arm.durability); // Infinity
+console.log(arm.getDamage()); // 1
 
-console.log(bow.durability); 
-console.log(bow.isBroken()); 
+console.log(bow.durability); // 0
+console.log(bow.isBroken()); // true
 
-console.log(arm.durability); 
-console.log(arm.isBroken()); 
+console.log(arm.durability); // Infinity
+console.log(arm.isBroken()); // false
 
 let option = new Weapon(["Рука", "Лук", "Меч", "Нож", "Посох"], [1, 10, 25, 5, 8], [Infinity, 200, 500, 300, 300], [1, 3, 1, 1, 2]);
 
-class AttackWeapon extends Weapon {
+class ForceWeapon extends Weapon {
     constructor(newName, name, attack, durability, range) {
         super(name, attack, durability, range);
         this.newName = newName;
     }
 }
-let forceVar = new AttackWeapon(["Длинный лук", "Секира", "Посох Бури"], ["Лук", "Меч", "Посох"], [15, 27, 10], [200, 800, 300], [4, 1, 3]);
+let forceoption = new ForceWeapon(["Длинный лук", "Секира", "Посох Бури"], ["Лук", "Меч", "Посох"], [15, 27, 10], [200, 800, 300], [4, 1, 3]);
 
 console.log(option);
-console.log(forceVar);
+console.log(forceoption);
