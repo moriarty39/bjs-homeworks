@@ -145,7 +145,7 @@ class Axe extends Sword{
     }
 }
 
-const ax2 = new Axe();
+const axe2 = new Axe();
 
 class StormStaff extends Staff{
     constructor() {
@@ -164,7 +164,7 @@ console.log(stormStaff2.attack);
 console.log(stormStaff2.durability); 
 console.log(stormStaff2.range); 
 
-// Задача 3
+
 
 let algebra = [];
 let geometry = [];
@@ -210,11 +210,11 @@ class StudentLog {
 
 const log = new StudentLog('Олег Никифоров');
 console.log(log.getName()) 
-console.log(log.addGrade(3, 'algebra'));
+console.log(log.addGrade(2, 'algebra'));
 console.log(log.addGrade('отлично!', 'math'));
 console.log(log.addGrade(4, 'algebra'));
 console.log(log.addGrade(5, 'geometry'));
-console.log(log.addGrade(25, 'geometry'));
+console.log(log.addGrade(4, 'geometry'));
 
 log.addGrade(2, 'algebra');
 log.addGrade(4, 'algebra');
