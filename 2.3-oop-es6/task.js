@@ -91,7 +91,7 @@ class Arm extends Weapon{
     }
 }
 
-const arm2 = new Arm();
+const armPlus = new Arm();
 
 class Bow extends Weapon{
     constructor() {
@@ -99,7 +99,7 @@ class Bow extends Weapon{
     }
 }
 
-const bow2 = new Bow();
+const bowPlus = new Bow();
 
 class Sword extends Weapon{
     constructor() {
@@ -107,7 +107,7 @@ class Sword extends Weapon{
     }
 }
 
-const sword2 = new Sword();
+const swordPlus = new Sword();
 
 class Knife extends Weapon{
     constructor() {
@@ -115,7 +115,7 @@ class Knife extends Weapon{
     }
 }
 
-const knife2 = new Knife();
+const knifePlus = new Knife();
 
 class Staff extends Weapon{
     constructor() {
@@ -123,7 +123,7 @@ class Staff extends Weapon{
     }
 }
 
-const staff2 = new Staff();
+const staffPlus = new Staff();
 
 class LongBow extends Bow{
     constructor() {
@@ -134,7 +134,7 @@ class LongBow extends Bow{
     }
 }
 
-const longBow2 = new LongBow();
+const longBowPlus = new LongBow();
 
 class Axe extends Sword{
     constructor() {
@@ -145,7 +145,7 @@ class Axe extends Sword{
     }
 }
 
-const axe2 = new Axe();
+const axePlus = new Axe();
 
 class StormStaff extends Staff{
     constructor() {
@@ -156,13 +156,13 @@ class StormStaff extends Staff{
     }
 }
 
-const stormStaff2 = new StormStaff();
+const stormStaffPlus = new StormStaff();
 
 
-console.log(stormStaff2.name); 
-console.log(stormStaff2.attack); 
-console.log(stormStaff2.durability); 
-console.log(stormStaff2.range); 
+console.log(stormStaffPlus.name); 
+console.log(stormStaffPlus.attack); 
+console.log(stormStaffPlus.durability); 
+console.log(stormStaffPlus.range); 
 
 
 
