@@ -209,7 +209,7 @@ class StudentLog {
 }
 
 const log = new StudentLog('Олег Никифоров');
-console.log(log.getName()) // Олег Никифоров
+console.log(log.getName()) 
 console.log(log.addGrade(3, 'algebra'));
 console.log(log.addGrade('отлично!', 'math'));
 console.log(log.addGrade(4, 'algebra'));
