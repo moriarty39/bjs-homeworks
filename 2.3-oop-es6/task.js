@@ -209,15 +209,22 @@ class StudentLog {
 }
 
 const log = new StudentLog('Олег Никифоров');
-console.log(log.getName()) 
-console.log(log.addGrade(2, 'algebra'));
+console.log(log.getName()) // Олег Никифоров
+console.log(log.addGrade(3, 'algebra'));
+// 1
+console.log(log.addGrade('отлично!', 'math'));
+// Вы пытались поставить оценку "отлично!" по предмету "math". Допускаются только числа от 1 до 5.
+// 0
 console.log(log.addGrade(4, 'algebra'));
+// 1
 console.log(log.addGrade(5, 'geometry'));
-console.log(log.addGrade(4, 'geometry'));
-
+// 1
+console.log(log.addGrade(25, 'geometry'));
+// Вы пытались поставить оценку "25" по предмету "geometry". Допускаются только числа от 1 до 5.
+// 1
 log.addGrade(2, 'algebra');
 log.addGrade(4, 'algebra');
 log.addGrade(5, 'geometry');
-log.addGrade(4, 'geometry'));
+console.log(log.addGrade(4, 'geometry'));
 
 console.log(log.getTotalAverage()); 
