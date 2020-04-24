@@ -190,28 +190,68 @@ console.log(stormStaff2.range); // 3
 
 // Задача 3
 
+let algebra = [];
+let geometry = [];
+let math = [];
+
 class StudentLog {
-
-    constructor( name = String, ){
-        this.name = name
-        this.subjectArr = []
+    constructor(name) {
+        this.name = name;
     }
-
-
-    getName(){
-        return this.name
+    getName() {
+        return this.name;
     }
-
-    addGrade( grade = Number, subject = String ){
-        const newSubj = {}
-        if(Number.isInteger(grade) && typeof subject === 'string' && grade< 5){
-                newSubj.grade = grade
-                newSubj.subject = subject
-            this.subjectArr.push(newSubj)
-        } else{
-            return `Вы пытались поставить оценку ${grade} по предмету "${subject}". Допускаются только числа от 1 до 5.`
+    addGrade(grade, subject) {   //Заполняем Журнал оценками
+        if (grade >= 1 && grade <= 5) {
+            switch (subject) {
+                case 'algebra':
+                    algebra.push(grade);
+                    // console.log(algebra);
+                    break
+                case 'geometry':
+                    geometry.push(grade);
+                    // console.log(geometry);
+                    break
+                case 'math':
+                    math.push(grade);
+                    // console.log(math);
+                    break
+            }
+            return 1 + `\nЖурнал:` + `\nАлгебра ${algebra}` + `\nГеометрия ${geometry}` + `\nМатематика ${math}`
+        } else if (grade > 5) {
+            return (`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.\n` + 1);
+        } else return (`Вы пытались поставить оценку ${grade} по предмету ${subject}. Допускаются только числа от 1 до 5.\n` + 0);
+    }
+    getTotalAverage() {   //соединяем массивы оценок и расчитываем среднее
+        let sum = 0;
+        let mas = algebra.concat(geometry,math);
+        if (mas.length == 0) {
+            return 0
         }
-        return newSubj
+        for (let i = 0; i < mas.length; i++) {
+            sum = sum + mas[i];
+        }
+        return `Средняя оценка:  ${Math.round(sum / mas.length)}`;
     }
-
 }
+
+const log = new StudentLog('Олег Никифоров');
+console.log(log.getName()) // Олег Никифоров
+console.log(log.addGrade(3, 'algebra'));
+// 1
+console.log(log.addGrade('отлично!', 'math'));
+// Вы пытались поставить оценку "отлично!" по предмету "math". Допускаются только числа от 1 до 5.
+// 0
+console.log(log.addGrade(4, 'algebra'));
+// 1
+console.log(log.addGrade(5, 'geometry'));
+// 1
+console.log(log.addGrade(25, 'geometry'));
+// Вы пытались поставить оценку "25" по предмету "geometry". Допускаются только числа от 1 до 5.
+// 1
+log.addGrade(2, 'algebra');
+log.addGrade(4, 'algebra');
+log.addGrade(5, 'geometry');
+console.log(log.addGrade(4, 'geometry'));
+
+console.log(log.getTotalAverage()); 
