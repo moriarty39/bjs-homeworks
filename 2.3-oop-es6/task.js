@@ -77,3 +77,55 @@ let forceoption = new ForceWeapon(["Длинный лук", "Секира", "П�
 
 console.log(option);
 console.log(forceoption);
+
+
+
+class Hand {
+    constructor() {
+        this.name = "Рука";
+        this.attack = 1;
+        this.durability = Infinity;
+        this.range = 1
+    }
+}
+class Bow {
+    constructor() {
+        this.name = "Лук";
+        this.attack = 10;
+        this.durability = 200;
+        this.range = 3
+    }
+}
+
+class Sword {
+    constructor() {
+        this.name = "Меч";
+        this.attack = 25;
+        this.durability = 500;
+        this.range = 1
+    }
+}
+
+class Knife {
+    constructor() {
+        this.name = "Нож";
+        this.attack = 5;
+        this.durability = 300;
+        this.range = 1
+    }
+}
+
+class Staff {
+    constructor() {
+        this.name = "Посох";
+        this.attack = 8;
+        this.durability = 300;
+        this.range = 2
+    }
+}
+const newbow = new Bow();
+
+console.log(newbow.name); // Лук
+console.log(newbow.attack); // 10
+console.log(newbow.durability); // 200
+console.log(newbow.range); // 3
